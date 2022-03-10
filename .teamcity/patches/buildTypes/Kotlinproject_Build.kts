@@ -14,6 +14,7 @@ in the project with id = 'Kotlinproject', and delete the patch script.
 create(RelativeId("Kotlinproject"), BuildType({
     id("Kotlinproject_Build")
     name = "Build"
+    paused = true
 
     vcs {
         root(RelativeId("Kotlinproject_HttpsGithubComAnasthanKotlinprojectGitRefsHeadsMain"), "+:src => .")
