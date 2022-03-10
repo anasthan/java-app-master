@@ -4,6 +4,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dockerCommand
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.dockerRegistry
+import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.githubIssues
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -42,6 +43,14 @@ project {
             url = "https://docker.io"
             userName = "ankitasthanaepam"
             password = "credentialsJSON:0070d74d-abad-4adf-9950-828d41b80a86"
+        }
+        githubIssues {
+            id = "PROJECT_EXT_4"
+            displayName = "anasthan/java-app-master"
+            repositoryURL = "https://github.com/anasthan/java-app-master"
+            authType = accessToken {
+                accessToken = "credentialsJSON:18dd74f8-df1a-4d8b-b199-49b5bfd1491d"
+            }
         }
     }
 }
