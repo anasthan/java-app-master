@@ -75,8 +75,8 @@ object JavaAppMaster_Clean : BuildType({
 
     steps {
         gradle {
+            name = "Clean Build"
             tasks = "clean build"
-            gradleWrapperPath = ""
         }
     }
 
