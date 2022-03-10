@@ -118,9 +118,9 @@ object Build : BuildType({
     }
 })
 
-object Package_1 : BuildType({
-    id("Package")
-    name = "Package"
+object Compile : BuildType({
+    id("Compile")
+    name = "Compile"
 
     vcs {
         root(DslContext.settingsRoot)
@@ -128,7 +128,7 @@ object Package_1 : BuildType({
 
     steps {
         gradle {
-            tasks = "clean build"
+            tasks = "clean compile"
         }
     }
 
