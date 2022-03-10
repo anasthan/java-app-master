@@ -16,7 +16,7 @@ create(RelativeId("Kotlinproject"), BuildType({
     name = "Build"
 
     vcs {
-        root(RelativeId("Kotlinproject_HttpsGithubComAnasthanKotlinprojectGitRefsHeadsMain"))
+        root(RelativeId("Kotlinproject_HttpsGithubComAnasthanKotlinprojectGitRefsHeadsMain"), "+:src => .")
     }
 
     steps {
