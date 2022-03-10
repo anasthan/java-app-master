@@ -100,3 +100,51 @@ object JavaAppMaster_HttpsGithubComAnasthanJavaAppMasterGitRefsHeadsMain : GitVc
         password = "credentialsJSON:7cbaf38c-f013-4a17-b458-ea8f11c94694"
     }
 })
+
+object JavaAppMaster_Compile : BuildType({
+    name = "Compile"
+
+    vcs {
+        root(JavaAppMaster_HttpsGithubComAnasthanJavaAppMasterGitRefsHeadsMain)
+    }
+
+    steps {
+        gradle {
+            name = "Clean Compile"
+            tasks = "clean compile"
+        }
+    }
+
+    triggers {
+        vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
+            quietPeriod = 30
+            perCheckinTriggering = true
+            enableQueueOptimization = false
+        }
+    }
+})
+
+object JavaAppMaster_Package : BuildType({
+    name = "Package"
+
+    vcs {
+        root(JavaAppMaster_HttpsGithubComAnasthanJavaAppMasterGitRefsHeadsMain)
+    }
+
+    steps {
+        gradle {
+            name = "Clean Package"
+            tasks = "clean package"
+        }
+    }
+
+    triggers {
+        vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
+            quietPeriod = 30
+            perCheckinTriggering = true
+            enableQueueOptimization = false
+        }
+    }
+})
